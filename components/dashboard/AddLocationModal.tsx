@@ -1,19 +1,23 @@
-"use client"
+'use client';
 
-import { X, Search } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { MapContainer, TileLayer } from "react-leaflet"
-import "leaflet/dist/leaflet.css"
+import { X, Search } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { MapContainer, TileLayer } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
 
 interface AddLocationModalProps {
-  isOpen: boolean
-  onClose: () => void
-  onSelect: (location: string) => void
+  isOpen: boolean;
+  onClose: () => void;
+  onSelect: (location: string) => void;
 }
 
-export function AddLocationModal({ isOpen, onClose, onSelect }: AddLocationModalProps) {
-  if (!isOpen) return null
+export function AddLocationModal({
+  isOpen,
+  onClose,
+  onSelect,
+}: AddLocationModalProps) {
+  if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
@@ -37,9 +41,9 @@ export function AddLocationModal({ isOpen, onClose, onSelect }: AddLocationModal
         {/* Map */}
         <div className="flex-1 p-4">
           <MapContainer
-            center={[23.8103, 90.4125]} // Dhaka coordinates
+            center={[23.8103, 90.4125]}
             zoom={13}
-            style={{ height: "100%", width: "100%" }}
+            style={{ height: '100%', width: '100%' }}
             className="rounded-lg"
           >
             <TileLayer
@@ -54,8 +58,8 @@ export function AddLocationModal({ isOpen, onClose, onSelect }: AddLocationModal
           <Button
             className="w-full"
             onClick={() => {
-              onSelect("Selected Location")
-              onClose()
+              onSelect('Selected Location');
+              onClose();
             }}
           >
             এই লোকেশন সিলেক্ট করুন
@@ -63,6 +67,5 @@ export function AddLocationModal({ isOpen, onClose, onSelect }: AddLocationModal
         </div>
       </div>
     </div>
-  )
+  );
 }
-
