@@ -5,4 +5,4 @@ export default function RootPage() {
   redirect('/bn');
 }
 
-export const dynamic = 'force-dynamic';
+// Remove the dynamic export as it's not needed for a simple redirect

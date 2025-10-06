@@ -9,9 +9,9 @@ export default createMiddleware({
 
 export const config = {
   matcher: [
-    // Enable middleware for all paths except static files
-    '/((?!api|_next|_vercel|.*\\..*).*)',
-    '/',
-    '/(bn|en)/:path*',
+    // Skip all internal paths (_next)
+    '/((?!_next).*)',
+    // Optional: enable for /api routes if you have them
+    // '/api/:path*',
   ],
 };

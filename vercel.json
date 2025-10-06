@@ -4,10 +4,5 @@
       "src": "package.json",
       "use": "@vercel/next"
     }
-  ],
-  "routes": [
-    { "src": "/$", "status": 308, "headers": { "Location": "/bn" } },
-    { "src": "/bn$", "status": 308, "headers": { "Location": "/bn" } },
-    { "src": "/en$", "status": 308, "headers": { "Location": "/en" } }
   ]
 }
