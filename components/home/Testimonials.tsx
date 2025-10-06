@@ -4,9 +4,9 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import img1 from '@/assests/review/icon-0 (1).webp';
-import img2 from '@/assests/review/icon-0.webp';
-import img3 from '@/assests/review/icon-4.webp';
+import img1 from '@/public/review/icon-0 (1).webp';
+import img2 from '@/public/review/icon-0.webp';
+import img3 from '@/public/review/icon-4.webp';
 import { useTranslations } from 'next-intl';
 import { StaticImageData } from 'next/image';
 

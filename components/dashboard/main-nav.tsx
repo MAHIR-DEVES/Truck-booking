@@ -1,18 +1,18 @@
-import { Bell } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Bell } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import Image from "next/image";
-import logo from "@/assests/icon.png";
-import { useTranslations } from "next-intl";
+} from '@/components/ui/dropdown-menu';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import Image from 'next/image';
+import logo from '@/public/icon.png';
+import { useTranslations } from 'next-intl';
 
 export function MainNav() {
-  const t = useTranslations("dashboard.nav");
+  const t = useTranslations('dashboard.nav');
 
   return (
     <header className="border-b">
@@ -20,22 +20,21 @@ export function MainNav() {
         {/* Logo & Beta tag */}
         <div className="flex items-center gap-2 flex-1 min-w-0">
           <Image src={logo} className="h-10 w-20 min-w-[3rem]" alt="Logo" />
-          
         </div>
 
         {/* Right Section */}
         <div className="flex items-center gap-4">
           {/* Notification Button */}
-          <Button 
-            variant="ghost" 
-            size="icon" 
+          <Button
+            variant="ghost"
+            size="icon"
             className="relative"
-            aria-label={t("notifications.title")}
+            aria-label={t('notifications.title')}
           >
             <Bell className="h-5 w-5" />
-            <span 
-              className="absolute top-1.5 right-1.5 h-2 w-2 bg-red-500 rounded-full" 
-              aria-label={t("notifications.newNotification")}
+            <span
+              className="absolute top-1.5 right-1.5 h-2 w-2 bg-red-500 rounded-full"
+              aria-label={t('notifications.newNotification')}
             />
           </Button>
 
@@ -56,16 +55,14 @@ export function MainNav() {
                 </Avatar>
                 <div className="text-center">
                   <p className="font-medium">Nurany Jannat</p>
-                  <p className="text-sm text-muted-foreground">
-                    01747335232
-                  </p>
+                  <p className="text-sm text-muted-foreground">01747335232</p>
                 </div>
               </div>
               <DropdownMenuItem>
-                <span>{t("profile.editProfile")}</span>
+                <span>{t('profile.editProfile')}</span>
               </DropdownMenuItem>
               <DropdownMenuItem className="text-red-600">
-                <span>{t("profile.logout")}</span>
+                <span>{t('profile.logout')}</span>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

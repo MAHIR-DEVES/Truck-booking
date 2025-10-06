@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, Download } from "lucide-react";
-import img1 from "@/assests/banner/home_banner_1.webp";
-import img2 from "@/assests/banner/home_banner_2.webp";
-import img3 from "@/assests/banner/home_banner_3.webp";
-import Image, { StaticImageData } from "next/image";
-import TruckHire from "./TruckHire";
-import { useTranslations } from "next-intl";
+import { useState, useEffect } from 'react';
+import { Button } from '@/components/ui/button';
+import { ChevronLeft, ChevronRight, Download } from 'lucide-react';
+import img1 from '@/public/banner/home_banner_1.webp';
+import img2 from '@/public/banner/home_banner_2.webp';
+import img3 from '@/public/banner/home_banner_3.webp';
+import Image, { StaticImageData } from 'next/image';
+import TruckHire from './TruckHire';
+import { useTranslations } from 'next-intl';
 
 interface BannerSlide {
   title: string;
@@ -27,9 +27,9 @@ const bannerImages = [img1, img2, img3];
 
 export default function Banner() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const t = useTranslations("home.banner");
+  const t = useTranslations('home.banner');
 
-  const slides = t.raw("slides") as TranslatedSlide[];
+  const slides = t.raw('slides') as TranslatedSlide[];
   const bannerSlides: BannerSlide[] = slides.map((slide, index) => ({
     ...slide,
     image: bannerImages[index],
@@ -37,18 +37,18 @@ export default function Banner() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % bannerSlides.length);
+      setCurrentSlide(prev => (prev + 1) % bannerSlides.length);
     }, 5000);
     return () => clearInterval(timer);
   }, [bannerSlides.length]);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % bannerSlides.length);
+    setCurrentSlide(prev => (prev + 1) % bannerSlides.length);
   };
 
   const prevSlide = () => {
     setCurrentSlide(
-      (prev) => (prev - 1 + bannerSlides.length) % bannerSlides.length
+      prev => (prev - 1 + bannerSlides.length) % bannerSlides.length
     );
   };
 
@@ -58,12 +58,12 @@ export default function Banner() {
         <div
           key={index}
           className={`absolute inset-0 transition-opacity duration-500 ${
-            index === currentSlide ? "opacity-100" : "opacity-0"
+            index === currentSlide ? 'opacity-100' : 'opacity-0'
           }`}
         >
           {/* Background Image */}
           <Image
-            src={slide.image || "/placeholder.svg"}
+            src={slide.image || '/placeholder.svg'}
             alt={slide.title}
             className="object-cover w-full h-full"
             layout="fill"
@@ -99,7 +99,7 @@ export default function Banner() {
             key={index}
             onClick={() => setCurrentSlide(index)}
             className={`w-2 h-2 rounded-full transition-all ${
-              index === currentSlide ? "bg-white w-6" : "bg-white/50"
+              index === currentSlide ? 'bg-white w-6' : 'bg-white/50'
             }`}
           />
         ))}
